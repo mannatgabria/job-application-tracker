@@ -108,7 +108,3 @@ Possible improvements for the project:
 
 Mannat Gabria  
 Bachelor student in Computer Engineering at Western Norway University of Applied Sciences
-    ├── app.js
-    ├── language.js
-    ├── storage.js
-    └── theme.js
