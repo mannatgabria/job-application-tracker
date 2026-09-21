@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="no">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Job Application Tracker</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+
+  <header class="header">
+    <div class="header-content">
+      <div>
+        <h1 data-i18n="appTitle">Søknadsoversikt</h1>
+        <p data-i18n="appSubtitle">Hold oversikt over jobber, praksisplasser og studentstillinger.</p>
+      </div>
+
+      <div class="top-actions">
+        <div class="language-switch">
+          <button id="btn-no" class="toggle-btn active">Norsk</button>
+          <button id="btn-en" class="toggle-btn">English</button>
+        </div>
+
+        <div class="theme-switch">
+          <button id="light-mode" class="theme-option active">Light mode</button>
+          <button id="dark-mode" class="theme-option">Dark mode</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <section class="dashboard">
+      <div class="card">
+        <h2 data-i18n="total">Totalt</h2>
+        <p id="total-count">0</p>
+      </div>
+
+      <div class="card">
+        <h2 data-i18n="waiting">Venter</h2>
+        <p id="waiting-count">0</p>
+      </div>
+
+      <div class="card">
+        <h2 data-i18n="interview">Intervju</h2>
+        <p id="interview-count">0</p>
+      </div>
+
+      <div class="card">
+        <h2 data-i18n="rejected">Avslag</h2>
+        <p id="rejected-count">0</p>
+      </div>
+    </section>
+
+    <section class="form-section">
+      <h2 data-i18n="addApplication">Legg til søknad</h2>
+
+      <form id="application-form">
+
+        <div class="form-grid">
+
+          <div class="form-group">
+            <label for="company">Company</label>
+            <input type="text" id="company" placeholder="Bedrift" required />
+          </div>
+
+          <div class="form-group">
+            <label for="position">Position</label>
+            <input type="text" id="position" placeholder="Stilling" required />
+          </div>
+
+          <div class="form-group">
+            <label for="type">Application type</label>
+            <select id="type">
+              <option value="Jobb">Jobb</option>
+              <option value="Praksis">Praksis</option>
+              <option value="Studentstilling">Studentstilling</option>
+              <option value="Trainee">Trainee</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="status">Status</label>
+            <select id="status">
+              <option value="Ikke sendt">Ikke sendt</option>
+              <option value="Sendt">Sendt</option>
+              <option value="Venter på svar">Venter på svar</option>
+              <option value="Intervju">Intervju</option>
+              <option value="Avslag">Avslag</option>
+              <option value="Tilbud">Tilbud</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="deadline">Deadline</label>
+            <input type="date" id="deadline" />
+          </div>
+
+          <div class="form-group">
+            <label for="contact">Contact person</label>
+            <input type="text" id="contact" placeholder="Kontaktperson" />
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="E-post" />
+          </div>
+
+          <div class="form-group">
+            <label for="link">Job link</label>
+            <input type="url" id="link" placeholder="Lenke til stilling" />
+          </div>
+
+        </div>
+
+        <div class="form-group notes-group">
+          <label for="notes">Notes</label>
+          <textarea id="notes" placeholder="Notater"></textarea>
+        </div>
+
+        <button type="submit" id="submit-btn" class="primary-btn" data-i18n="save">Lagre søknad</button>
+        <button type="button" id="cancel-edit-btn" class="secondary-btn hidden">Avbryt redigering</button>
+      </form>
+    </section>
+
+    <section class="filter-section">
+      <input type="text" id="search" placeholder="Søk etter bedrift eller stilling..." />
+
+      <select id="status-filter">
+        <option value="Alle">Alle statuser</option>
+        <option value="Ikke sendt">Ikke sendt</option>
+        <option value="Sendt">Sendt</option>
+        <option value="Venter på svar">Venter på svar</option>
+        <option value="Intervju">Intervju</option>
+        <option value="Avslag">Avslag</option>
+        <option value="Tilbud">Tilbud</option>
+      </select>
+    </section>
+
+    <section class="applications-section">
+      <h2 data-i18n="applications">Mine søknader</h2>
+      <div id="applications-list" class="applications-list"></div>
+    </section>
+
+  </main>
+
+  <script src="js/storage.js"></script>
+  <script src="js/language.js"></script>
+  <script src="js/theme.js"></script>
+  <script src="js/app.js"></script>
+</body>
+
+</html>
