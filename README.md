@@ -4,6 +4,10 @@ A simple web application for tracking job applications, internships, student pos
 
 The project is built with HTML, CSS, and JavaScript, and uses localStorage to save applications directly in the browser.
 
+## Demo
+
+https://github.com/user-attachments/assets/5250675c-fc3d-4b17-b655-ceba809a4685
+
 ## Features
 
 - Add new job applications
